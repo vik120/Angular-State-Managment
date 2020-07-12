@@ -3,7 +3,8 @@ import { NgModule } from '@angular/core';
 
 import { UsersModule } from './users/users.module';
 
-import { StoreModule } from '@ngrx/store'
+import { StoreModule } from '@ngrx/store';
+import { StoreDevtoolsModule } from "@ngrx/store-devtools";
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -22,7 +23,8 @@ import { UsersComponent } from './users/users/users.component';
     BrowserModule,
     AppRoutingModule,
 	  UsersModule,
-	  StoreModule.forRoot({})
+    StoreModule.forRoot({}),
+    StoreDevtoolsModule.instrument()
   ],
   providers: [],
   bootstrap: [AppComponent]

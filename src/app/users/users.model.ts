@@ -1,4 +1,4 @@
-export interface users{
+export interface Users{
     id: Number;
     name: String;
     username: String;

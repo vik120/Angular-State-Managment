@@ -1,3 +1,4 @@
+import { StoreModule } from '@ngrx/store';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
@@ -7,7 +8,7 @@ import { ListusersComponent } from './listusers/listusers.component';
 
 import { Routes, RouterModule } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
-import { StoreModule } from '@ngrx/store'
+import { userReducer } from './state/user.reducers';
 
 const userRoutes: Routes = [
 	{
@@ -19,7 +20,7 @@ const userRoutes: Routes = [
 		component: AddusersComponent
 	},
 	{
-		path: 'edit',
+		path: 'edit/:id',
 		component: EditusersComponent
 	}
 ]
@@ -31,7 +32,7 @@ const userRoutes: Routes = [
     CommonModule,
 	  ReactiveFormsModule,
 	  RouterModule.forChild(userRoutes),
-	  
+    StoreModule.forFeature('users', userReducer)
   ]
 })
 export class UsersModule { }

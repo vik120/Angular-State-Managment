@@ -1,48 +1,35 @@
 <div class="container">
-	<table class="table table-bordered mt-3">
+	<table class="table table-striped mt-3">
 	  <thead class="thead-dark">
 	    <tr>
-	      <th scope="col">#</th>
-	      <th scope="col">Name</th>
-	      <th scope="col">Username</th>
-	      <th scope="col">Email</th>
-		  <th scope="col">Phone</th>
-		  <th scope="col">Website</th>
-		  <th scope="col">Company</th>
-		  <th scope="col">Address</th>
-		   <th scope="col">Actions</th>
+	      <th scope="col" width="4%">#</th>
+	      <th scope="col" width="8%">Name</th>
+	      <th scope="col" width="8%">Username</th>
+	      <th scope="col" width="8%">Email</th>
+		  <th scope="col" width="8%">Phone</th>
+		  <th scope="col" width="8%">Website</th>
+		  <th scope="col" width="8%">Company</th>
+		  <th scope="col" width="8%">Address</th>
+		   <th scope="col" width="8%">Actions</th>
 	    </tr>
 	  </thead>
 	  <tbody>
-	    <tr>
-	      <th scope="row">1</th>
-	      <td>Mark</td>
-	      <td>Otto</td>
-	      <td>@mdo</td>
-	      <td>Mark</td>
-	      <td>Otto</td>
-	      <td>@mdo</td>
-	      <td>Mark</td>
+	    <tr *ngFor="let item of userslist; let i=index">
+	      <th scope="row">{{ i }}</th>
+	      <td>{{item.name}}</td>
+	      <td>{{item.username}}</td>
+	      <td>{{item.email}}</td>
+	      <td>{{item.phone}}</td>
+	      <td>{{item.website}}</td>
+	      <td>{{item.company}}</td>
+	      <td>{{item.address}}</td>
 	      <td>
-		  	<a [routerLink]="['/users/edit/']" class="btn btn-sm" title="Edit"><i class="material-icons">edit</i></a>
+		  	<a [routerLink]="['/users/edit/'+item.id]" class="btn btn-sm" title="Edit"><i class="material-icons">edit</i></a>
 			<button class="btn btn-sm"><i class="material-icons">close</i></button>
 		  </td>
 	    </tr>
-	    <tr>
-	      <th scope="row">2</th>
-	      <td>Mark</td>
-	      <td>Otto</td>
-	      <td>@mdo</td>
-	      <td>Mark</td>
-	      <td>Otto</td>
-	      <td>@mdo</td>
-	      <td>Mark</td>
-	      <td>
-		  	<a [routerLink]="['/users/edit/']" class="btn btn-sm" title="Edit"><i class="material-icons">edit</i></a>
-			<button class="btn btn-sm"><i class="material-icons">close</i></button>
-		  </td>
-	    </tr>
-	    
+
+
 	  </tbody>
 	</table>
 

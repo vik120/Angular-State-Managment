@@ -1,3 +1,4 @@
+import { Store, StoreModule } from '@ngrx/store';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListusersComponent implements OnInit {
 
-  constructor() { }
+  userslist: []
+
+  constructor(private store: Store<any>) { }
 
   ngOnInit(): void {
+    this.store.dispatch({type: 'LOAD_USER'})
+    this.store.subscribe(
+      (data:any) => {
+        this.userslist = data.users.users;
+        console.log(data.users.users);
+      }
+    )
   }
 
 }
