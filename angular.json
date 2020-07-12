@@ -123,6 +123,7 @@
   },
   "defaultProject": "angular-state",
   "cli": {
+    "defaultCollection": "@ngrx/schematics",
     "analytics": false
   }
 }

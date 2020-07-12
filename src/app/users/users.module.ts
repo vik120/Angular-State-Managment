@@ -1,6 +1,9 @@
+import { UserEffect } from './state/user.effects';
 import { StoreModule } from '@ngrx/store';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { Actions, EffectsModule } from "@ngrx/effects";
+
 
 import { AddusersComponent } from './addusers/addusers.component';
 import { EditusersComponent } from './editusers/editusers.component';
@@ -32,7 +35,8 @@ const userRoutes: Routes = [
     CommonModule,
 	  ReactiveFormsModule,
 	  RouterModule.forChild(userRoutes),
-    StoreModule.forFeature('users', userReducer)
+    // StoreModule.forFeature('users', userReducer),
+    // EffectsModule.forFeature([UserEffect])
   ]
 })
 export class UsersModule { }

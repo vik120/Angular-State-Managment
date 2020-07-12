@@ -1,4 +1,4 @@
-
+import { Action } from '@ngrx/store';
 import { Users } from './../users.model';
 import * as UserActions from './user.action';
 import * as fromRoot from '../../state/app-state';
@@ -51,7 +51,7 @@ export const initalState: UserState = {
   error: ''
 }
 
-export function customerReducer(
+export function userReducer(
   state = initalState,
   action: UserActions.Action
 ): UserState{
