@@ -7,6 +7,7 @@ import { ListusersComponent } from './listusers/listusers.component';
 
 import { Routes, RouterModule } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
+import { StoreModule } from '@ngrx/store'
 
 const userRoutes: Routes = [
 	{
